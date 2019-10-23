@@ -17,6 +17,7 @@ class CurrentWorkload implements Exporter
     {
 
         $this->gauge = $prometheusExporter->registerGauge(
+            config('horizon-exporter.namespace'),
             'horizon_current_workload',
             'Current workload of all queues',
             ['queue']

@@ -13,12 +13,14 @@ use Superbalist\LaravelPrometheusExporter\PrometheusExporter;
 class FailedJobsPerHour implements Exporter
 {
     protected $gauge;
+
     public function metrics(CollectorRegistry $prometheusExporter)
     {
 
         $this->gauge = $prometheusExporter->registerGauge(
+            config('horizon-exporter.namespace'),
             'horizon_failed_jobs',
-            'The number of recently failed jobs'
+            'The number of recently failed jobs',
         );
     }
 

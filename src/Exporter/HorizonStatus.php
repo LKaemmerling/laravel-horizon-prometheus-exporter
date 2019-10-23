@@ -18,8 +18,9 @@ class HorizonStatus implements Exporter
     {
 
         $this->gauge = $prometheusExporter->registerGauge(
+            config('horizon-exporter.namespace'),
             'horizon_status',
-            'The status of Horizon, -1 = inactive, 0 = paused, 1 = running'
+            'The status of Horizon, -1 = inactive, 0 = paused, 1 = running',
         );
     }
 

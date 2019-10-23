@@ -17,6 +17,7 @@ class CurrentProccesesPerQueue implements Exporter
     {
 
         $this->gauge = $prometheusExporter->registerGauge(
+            config('horizon-exporter.namespace'),
             'horizon_current_processes',
             'Current processes of all queues',
             ['queue']

@@ -15,8 +15,11 @@ class IPWhitelistingMiddleware
             $clientIp = $request->ip();
             if (in_array($clientIp, config('horizon-exporter.ip_whitelist'))) {
                 return $next($request);
+            } else {
+                return abort(403);
             }
+        } else {
+            return $next($request);
         }
-        return abort(403);
     }
 }

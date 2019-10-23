@@ -25,7 +25,7 @@ composer require lkdevelopment/laravel-horizon-prometheus-exporter
 
 ## Configuration
 ``` php
-php artisan vendor:publish --provider=LKDevelopment\HorizonPrometheusExporter\HorizonPrometheusExporterServiceProvider
+php artisan vendor:publish --provider=LKDevelopment\\HorizonPrometheusExporter\\HorizonPrometheusExporterServiceProvider
 ```
 You can configure this package by changing the values in `config/horizon-exporter.php`.
 

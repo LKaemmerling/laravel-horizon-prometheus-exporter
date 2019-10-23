@@ -15,6 +15,7 @@ class JobsPerMinute implements Exporter
     {
 
         $this->gauge = $prometheusExporter->registerGauge(
+            config('horizon-exporter.namespace'),
             'horizon_jobs_per_minute',
             'The number of jobs per minute'
         );

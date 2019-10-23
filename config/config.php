@@ -1,5 +1,6 @@
 <?php
 return [
+    "namespace" => 'app',
     "enabled" => env('HORIZON_PROMETHEUS_EXPORTER_ENABLED', true),
 
     /**
