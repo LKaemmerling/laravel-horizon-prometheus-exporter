@@ -1,18 +1,18 @@
 {
-    "name": "spatie/laravel-horizon-prometheus-exporter",
+    "name": "lkaemmerling/laravel-horizon-prometheus-exporter",
     "description": "A small package to gain and export long time information from Laravel Horizon for Prometheus.",
     "keywords": [
         "lkdevelopment",
         "laravel-horizon-prometheus-exporter",
         "horizon"
     ],
-    "homepage": "https://github.com/spatie/laravel-horizon-prometheus-exporter",
+    "homepage": "https://github.com/lkaemmerling/laravel-horizon-prometheus-exporter",
     "license": "MIT",
     "authors": [
         {
             "name": "Lukas Kämmerling",
             "email": "kontakt@lukas-kaemmerling.de",
-            "homepage": "https://spatie.be",
+            "homepage": "https://lukas-kaemmerling.de",
             "role": "Developer"
         }
     ],
