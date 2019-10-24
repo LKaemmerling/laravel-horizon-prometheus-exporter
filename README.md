@@ -24,12 +24,14 @@ composer require lkdevelopment/laravel-horizon-prometheus-exporter
 ```
 
 ## Configuration
-``` php
+```bash
 php artisan vendor:publish --provider=LKDevelopment\\HorizonPrometheusExporter\\HorizonPrometheusExporterServiceProvider
 ```
 You can configure this package by changing the values in `config/horizon-exporter.php`.
 
+## Dashboard
 
+You can find a sample dashboard using this metrics on the [Grafana Marketplace](https://grafana.com/grafana/dashboards/11034).
 ### Testing
 
 ``` bash
