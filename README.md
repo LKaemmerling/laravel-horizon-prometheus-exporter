@@ -1,8 +1,8 @@
 # Laravel Horizon Prometheus Exporter
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/lkdevelopment/laravel-horizon-prometheus-exporter.svg?style=flat-square)](https://packagist.org/packages/lkdevelopment/laravel-horizon-prometheus-exporter)
-[![Build Status](https://img.shields.io/travis/lkdevelopment/laravel-horizon-prometheus-exporter/master.svg?style=flat-square)](https://travis-ci.org/lkdevelopment/laravel-horizon-prometheus-exporter)
-[![Total Downloads](https://img.shields.io/packagist/dt/lkdevelopment/laravel-horizon-prometheus-exporter.svg?style=flat-square)](https://packagist.org/packages/lkdevelopment/laravel-horizon-prometheus-exporter)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/lkaemmerling/laravel-horizon-prometheus-exporter.svg?style=flat-square)](https://packagist.org/packages/lkaemmerling/laravel-horizon-prometheus-exporter)
+[![Build Status](https://img.shields.io/travis/lkaemmerling/laravel-horizon-prometheus-exporter/master.svg?style=flat-square)](https://travis-ci.org/lkaemmerling/laravel-horizon-prometheus-exporter)
+[![Total Downloads](https://img.shields.io/packagist/dt/lkaemmerling/laravel-horizon-prometheus-exporter.svg?style=flat-square)](https://packagist.org/packages/lkaemmerling/laravel-horizon-prometheus-exporter)
 
 
 This package allows an easy way to expose the Laravel Horizon Metrics to Prometheus.
@@ -20,7 +20,7 @@ from your application. With Prometheus and a visualisation tool called `Grafana`
 You can install the package via composer:
 
 ```bash
-composer require lkdevelopment/laravel-horizon-prometheus-exporter
+composer require lkaemmerling/laravel-horizon-prometheus-exporter
 ```
 
 ## Configuration
