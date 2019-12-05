@@ -20,7 +20,7 @@ class FailedJobsPerHour implements Exporter
         $this->gauge = $prometheusExporter->registerGauge(
             config('horizon-exporter.namespace'),
             'horizon_failed_jobs',
-            'The number of recently failed jobs',
+            'The number of recently failed jobs'
         );
     }
 
