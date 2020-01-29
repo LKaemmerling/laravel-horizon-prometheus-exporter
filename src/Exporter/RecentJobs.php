@@ -19,8 +19,8 @@ class RecentJobs implements Exporter
 
         $this->gauge = $prometheusExporter->registerGauge(
             config('horizon-exporter.namespace'),
-            'horizon_all_jobs',
-            'The number of jobs'
+            'horizon_recent_jobs',
+            'The number of recent jobs'
         );
     }
 
