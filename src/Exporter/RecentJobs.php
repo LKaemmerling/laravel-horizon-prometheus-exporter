@@ -10,7 +10,7 @@ use LKDevelopment\HorizonPrometheusExporter\Contracts\Exporter;
 use Prometheus\CollectorRegistry;
 use Superbalist\LaravelPrometheusExporter\PrometheusExporter;
 
-class AllJobs implements Exporter
+class RecentJobs implements Exporter
 {
     protected $gauge;
 
