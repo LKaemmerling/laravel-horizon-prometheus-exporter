@@ -23,8 +23,8 @@
     "require-dev": {
         "symfony/var-dumper": "^4.3",
         "phpunit/phpunit": "^8.2",
-        "illuminate/support": "^5.8.15|^6.0",
-        "illuminate/routing": "^5.8.15|^6.0",
+        "illuminate/support": "^5.8.15|^6.0|^7.0",
+        "illuminate/routing": "^5.8.15|^6.0|^7.0",
         "laravel/horizon": "^3.0"
     },
     "autoload": {
