@@ -40,7 +40,7 @@ composer test
 
 ### Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+Please see [Releases](https://github.com/LKaemmerling/laravel-horizon-prometheus-exporter/releases) for more information on what has changed recently.
 
 ## Contributing
 

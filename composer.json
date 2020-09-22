@@ -18,7 +18,7 @@
     ],
     "require": {
         "php": "^7.1",
-        "lkaemmerling/prometheus_client_php": "^v1.0.3"
+        "lkaemmerling/prometheus_client_php": "^v1.0.3|v2.0.0"
     },
     "require-dev": {
         "symfony/var-dumper": "^4.3",
