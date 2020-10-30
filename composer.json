@@ -1,10 +1,12 @@
 {
     "name": "lkaemmerling/laravel-horizon-prometheus-exporter",
-    "description": "A small package to gain and export long time information from Laravel Horizon for Prometheus.",
+    "description": "A small package to gain and export long time information from Laravel & Horizon for Prometheus.",
     "keywords": [
-        "lkdevelopment",
         "laravel-horizon-prometheus-exporter",
-        "horizon"
+        "horizon",
+        "laravel",
+        "prometheus",
+        "exporter"
     ],
     "homepage": "https://github.com/lkaemmerling/laravel-horizon-prometheus-exporter",
     "license": "MIT",
