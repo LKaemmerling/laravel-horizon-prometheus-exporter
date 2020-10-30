@@ -5,10 +5,8 @@ namespace LKDevelopment\HorizonPrometheusExporter\Exporter;
 
 
 use Laravel\Horizon\Contracts\MasterSupervisorRepository;
-use Laravel\Horizon\Contracts\MetricsRepository;
 use LKDevelopment\HorizonPrometheusExporter\Contracts\Exporter;
 use Prometheus\CollectorRegistry;
-use Superbalist\LaravelPrometheusExporter\PrometheusExporter;
 
 class HorizonStatus implements Exporter
 {

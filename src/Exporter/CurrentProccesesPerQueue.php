@@ -3,12 +3,9 @@
 
 namespace LKDevelopment\HorizonPrometheusExporter\Exporter;
 
-
-use Laravel\Horizon\Contracts\MetricsRepository;
 use Laravel\Horizon\Contracts\WorkloadRepository;
 use LKDevelopment\HorizonPrometheusExporter\Contracts\Exporter;
 use Prometheus\CollectorRegistry;
-use Superbalist\LaravelPrometheusExporter\PrometheusExporter;
 
 class CurrentProccesesPerQueue implements Exporter
 {

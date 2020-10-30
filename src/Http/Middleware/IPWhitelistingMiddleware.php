@@ -3,7 +3,6 @@
 
 namespace LKDevelopment\HorizonPrometheusExporter\Http\Middleware;
 
-
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
