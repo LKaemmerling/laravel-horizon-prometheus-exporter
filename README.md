@@ -29,9 +29,14 @@ php artisan vendor:publish --provider=LKDevelopment\\HorizonPrometheusExporter\\
 ```
 You can configure this package by changing the values in `config/horizon-exporter.php`.
 
+## Custom Metrics
+
+You can also use this package easily to expose custom metrics. You just need to implement the `LKDevelopment\HorizonPrometheusExporter\Contracts\Exporter` interface and then add your implementation to your `config/horizon-exporter.php` like we do it for the Horizon exporters: https://github.com/LKaemmerling/laravel-horizon-prometheus-exporter/blob/master/config/config.php#L17
+
 ## Dashboard
 
 You can find a sample dashboard using this metrics on the [Grafana Marketplace](https://grafana.com/grafana/dashboards/11034).
+
 ### Testing
 
 ``` bash
