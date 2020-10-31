@@ -3,20 +3,16 @@
 
 namespace LKDevelopment\HorizonPrometheusExporter\Exporter;
 
-
-use Laravel\Horizon\Contracts\MetricsRepository;
 use Laravel\Horizon\Contracts\WorkloadRepository;
 use LKDevelopment\HorizonPrometheusExporter\Contracts\Exporter;
 use Prometheus\CollectorRegistry;
-use Superbalist\LaravelPrometheusExporter\PrometheusExporter;
 
 class CurrentProccesesPerQueue implements Exporter
 {
     protected $gauge;
-    public function metrics(CollectorRegistry $prometheusExporter)
+    public function metrics(CollectorRegistry $collectorRegistry)
     {
-
-        $this->gauge = $prometheusExporter->registerGauge(
+        $this->gauge = $collectorRegistry->registerGauge(
             config('horizon-exporter.namespace'),
             'horizon_current_processes',
             'Current processes of all queues',

@@ -1,10 +1,12 @@
 {
     "name": "lkaemmerling/laravel-horizon-prometheus-exporter",
-    "description": "A small package to gain and export long time information from Laravel Horizon for Prometheus.",
+    "description": "A small package to gain and export long time information from Laravel & Horizon for Prometheus.",
     "keywords": [
-        "lkdevelopment",
         "laravel-horizon-prometheus-exporter",
-        "horizon"
+        "horizon",
+        "laravel",
+        "prometheus",
+        "exporter"
     ],
     "homepage": "https://github.com/lkaemmerling/laravel-horizon-prometheus-exporter",
     "license": "MIT",
@@ -18,14 +20,16 @@
     ],
     "require": {
         "php": "^7.1",
-        "promphp/prometheus_client_php": "^1.0.3|^2.0.0"
+        "promphp/prometheus_client_php": "^1.0.3|^2.0.0",
+        "illuminate/routing": "^5.8.15|^6.0|^7.0|^8.0",
+        "illuminate/support": "^5.8.15|^6.0|^7.0|^8.0",
+        "illuminate/config": "^5.8.15|^6.0|^7.0|^8.0",
+        "laravel/horizon": "^3.0|^4.0|^5.0"
     },
     "require-dev": {
-        "symfony/var-dumper": "^4.3",
+        "orchestra/testbench": "^3.8|^v4.9|^5.3|^6.3",
         "phpunit/phpunit": "^8.2",
-        "illuminate/support": "^5.8.15|^6.0|^7.0|^8.0",
-        "illuminate/routing": "^5.8.15|^6.0|^7.0|^8.0",
-        "laravel/horizon": "^3.0|^4.0|^5.0"
+        "symfony/var-dumper": "^4.3|^5.1"
     },
     "autoload": {
         "psr-4": {

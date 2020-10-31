@@ -1,7 +1,7 @@
 # Laravel Horizon Prometheus Exporter
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/lkaemmerling/laravel-horizon-prometheus-exporter.svg?style=flat-square)](https://packagist.org/packages/lkaemmerling/laravel-horizon-prometheus-exporter)
-[![Build Status](https://img.shields.io/travis/lkaemmerling/laravel-horizon-prometheus-exporter/master.svg?style=flat-square)](https://travis-ci.org/lkaemmerling/laravel-horizon-prometheus-exporter)
+[![Actions Status](https://github.com/lkaemmerling/laravel-horizon-prometheus-exporter/workflows/Tests/badge.svg)](https://github.com/lkaemmerling/laravel-horizon-prometheus-exporter/actions)
 [![Total Downloads](https://img.shields.io/packagist/dt/lkaemmerling/laravel-horizon-prometheus-exporter.svg?style=flat-square)](https://packagist.org/packages/lkaemmerling/laravel-horizon-prometheus-exporter)
 
 
