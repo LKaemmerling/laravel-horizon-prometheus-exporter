@@ -14,10 +14,10 @@ interface Exporter
 {
     /**
      * The metrics method is used to register/describe your metrics to the exporter.
-     * @param CollectorRegistry $prometheusExporter
+     * @param CollectorRegistry $collectorRegistry
      * @void
      */
-    public function metrics(CollectorRegistry $prometheusExporter);
+    public function metrics(CollectorRegistry $collectorRegistry);
 
     /**
      * The collect method is called from the Exporter when he collects the data.

@@ -10,10 +10,9 @@ use Prometheus\CollectorRegistry;
 class CurrentProccesesPerQueue implements Exporter
 {
     protected $gauge;
-    public function metrics(CollectorRegistry $prometheusExporter)
+    public function metrics(CollectorRegistry $collectorRegistry)
     {
-
-        $this->gauge = $prometheusExporter->registerGauge(
+        $this->gauge = $collectorRegistry->registerGauge(
             config('horizon-exporter.namespace'),
             'horizon_current_processes',
             'Current processes of all queues',

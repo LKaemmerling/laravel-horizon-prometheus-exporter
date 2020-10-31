@@ -11,10 +11,9 @@ use Prometheus\CollectorRegistry;
 class CurrentWorkload implements Exporter
 {
     protected $gauge;
-    public function metrics(CollectorRegistry $prometheusExporter)
+    public function metrics(CollectorRegistry $collectorRegistry)
     {
-
-        $this->gauge = $prometheusExporter->registerGauge(
+        $this->gauge = $collectorRegistry->registerGauge(
             config('horizon-exporter.namespace'),
             'horizon_current_workload',
             'Current workload of all queues',
