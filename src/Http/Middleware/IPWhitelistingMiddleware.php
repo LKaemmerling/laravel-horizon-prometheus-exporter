@@ -5,6 +5,7 @@ namespace LKDevelopment\HorizonPrometheusExporter\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Symfony\Component\HttpFoundation\IpUtils;
 
 class IPWhitelistingMiddleware
 {
@@ -12,7 +13,7 @@ class IPWhitelistingMiddleware
     {
         if (!empty(config('horizon-exporter.ip_whitelist'))) {
             $clientIp = $request->ip();
-            if (in_array($clientIp, config('horizon-exporter.ip_whitelist'))) {
+            if (IpUtils::checkIp($clientIp, config('horizon-exporter.ip_whitelist'))) {
                 return $next($request);
             } else {
                 abort(403);
