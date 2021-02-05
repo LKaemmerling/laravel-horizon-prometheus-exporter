@@ -38,6 +38,14 @@ class IPWhitelistingMiddlewareTest extends TestCase
             [
                 "127.0.0.2",
                 Response::HTTP_FORBIDDEN
+            ],
+            [
+                "10.0.0.1",
+                Response::HTTP_OK
+            ],
+            [
+                "10.0.1.1",
+                Response::HTTP_FORBIDDEN
             ]
         ];
     }
