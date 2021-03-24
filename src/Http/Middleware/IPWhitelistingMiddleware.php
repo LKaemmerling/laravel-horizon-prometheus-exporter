@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\IpUtils;
 
 class IPWhitelistingMiddleware
 {
-    public function handle(Request $request, \Closure $next): Response
+    public function handle(Request $request, \Closure $next)
     {
         if (!empty(config('horizon-exporter.ip_whitelist'))) {
             $clientIp = $request->ip();
