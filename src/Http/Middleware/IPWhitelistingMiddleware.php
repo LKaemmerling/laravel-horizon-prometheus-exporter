@@ -12,7 +12,7 @@ class IPWhitelistingMiddleware
     public function handle(Request $request, \Closure $next)
     {
         if (!empty(config('horizon-exporter.ip_whitelist'))) {
-            $clientIp = $request->ip();
+            $clientIp = $_SERVER["HTTP_CF_CONNECTING_IP"] ?? $request->ip();
             if (IpUtils::checkIp($clientIp, config('horizon-exporter.ip_whitelist'))) {
                 return $next($request);
             } else {
