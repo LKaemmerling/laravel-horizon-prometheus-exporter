@@ -29,7 +29,12 @@ return [
     "ip_whitelist" => [
         // Keep empty to allow all IP addresses
     ],
-
+    /**
+     * parallel call to exporters to increase performance
+     * This required amphp/parallel-functions to be installed
+     * Attention: This is an experimental feature, use it on your own risk
+     */
+    "parallel_exporters" => false,
     /**
      * You can change the Middleware which is used for the IP whitelisting.  You can add your own, like a token based authentication.
      */

@@ -24,12 +24,21 @@ class ExporterRepository
      */
     public static function load(array $exporters = []): void
     {
-        $_exporters = empty($exporters) ? config('horizon-exporter.exporters') : $exporters;
+        $exporters = empty($exporters) ? config('horizon-exporter.exporters') : $exporters;
 
         if (self::getRegistry() === null) {
             self::setRegistry(new CollectorRegistry(new InMemory()));
         }
-        foreach ($_exporters as $exporter) {
+        if (!config('horizon-exporter.parallel_exporters', false)) {
+            self::collectSynchron($exporters);
+            return;
+        }
+        self::collectAsynchron($exporters);
+    }
+
+    protected static function collectSynchron(array $exporters)
+    {
+        foreach ($exporters as $exporter) {
             $_exporter = new $exporter();
             /**
              * @var Exporter $_exporter
@@ -37,6 +46,21 @@ class ExporterRepository
             $_exporter->metrics(self::$registry);
             $_exporter->collect();
         }
+    }
+
+    protected static function collectAsynchron(array $exporters)
+    {
+        if (!function_exists("\Amp\ParallelFunctions\parallelMap")) {
+            throw new \RuntimeException("amphp/parallel-functions is not installed in this project.");
+        }
+        \Amp\Promise\wait(\Amp\ParallelFunctions\parallelMap($exporters, function ($exporter) {
+            $_exporter = new $exporter();
+            /**
+             * @var Exporter $_exporter
+             */
+            $_exporter->metrics(self::$registry);
+            $_exporter->collect();
+        }));
     }
 
     /**
