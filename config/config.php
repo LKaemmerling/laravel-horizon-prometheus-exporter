@@ -22,6 +22,14 @@ return [
         \LKDevelopment\HorizonPrometheusExporter\Exporter\HorizonStatus::class,
         \LKDevelopment\HorizonPrometheusExporter\Exporter\RecentJobs::class
     ],
+    /**
+     * With this config line you can easily change the used storageAdapter.
+     * Build in into the Prometheus Package are:
+     * * \Prometheus\Storage\InMemory() (Default)
+     * * \Prometheus\Storage\Redis()
+     * * \Prometheus\Storage\APC()
+     */
+    "storageAdapter" => new \Prometheus\Storage\InMemory(),
 
     /**
      * IP Whitelisting, you may don't want to expose your metrics on the internet so you can add the IP addresses of your Prometheus Server here.
