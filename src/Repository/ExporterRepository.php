@@ -53,12 +53,13 @@ class ExporterRepository
         if (!function_exists("\Amp\ParallelFunctions\parallelMap")) {
             throw new \RuntimeException("amphp/parallel-functions is not installed in this project.");
         }
-        \Amp\Promise\wait(\Amp\ParallelFunctions\parallelMap($exporters, function ($exporter) {
+        $registry = self::$registry;
+        \Amp\Promise\wait(\Amp\ParallelFunctions\parallelMap($exporters, function ($exporter) use ($registry) {
             $_exporter = new $exporter();
             /**
              * @var Exporter $_exporter
              */
-            $_exporter->metrics(self::$registry);
+            $_exporter->metrics($registry);
             $_exporter->collect();
         }));
     }
