@@ -50,18 +50,22 @@ class ExporterRepository
 
     protected static function collectAsynchron(array $exporters)
     {
-        if (!function_exists("\Amp\ParallelFunctions\parallelMap")) {
-            throw new \RuntimeException("amphp/parallel-functions is not installed in this project.");
+        if (!class_exists(\Spatie\Async\Pool::class)) {
+            throw new \RuntimeException("spatie/async is not installed in this project.");
         }
         $registry = self::$registry;
-        \Amp\Promise\wait(\Amp\ParallelFunctions\parallelMap($exporters, function ($exporter) use ($registry) {
-            $_exporter = new $exporter();
-            /**
-             * @var Exporter $_exporter
-             */
-            $_exporter->metrics($registry);
-            $_exporter->collect();
-        }));
+        $pool = \Spatie\Async\Pool::create();
+        foreach ($exporters as $exporter) {
+            $pool->add(function () use ($exporter, &$registry) {
+                $_exporter = new $exporter();
+                /**
+                 * @var Exporter $_exporter
+                 */
+                $_exporter->metrics($registry);
+                $_exporter->collect();
+            });
+
+        }
     }
 
     /**
