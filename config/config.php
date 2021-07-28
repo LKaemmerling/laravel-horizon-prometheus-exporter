@@ -29,7 +29,7 @@ return [
      * * \Prometheus\Storage\Redis()
      * * \Prometheus\Storage\APC()
      */
-    "storageAdapter" => new \Prometheus\Storage\InMemory(),
+    "storage_adapter" => new \Prometheus\Storage\InMemory(),
 
     /**
      * IP Whitelisting, you may don't want to expose your metrics on the internet so you can add the IP addresses of your Prometheus Server here.

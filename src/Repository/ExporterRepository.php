@@ -27,7 +27,7 @@ class ExporterRepository
         $_exporters = empty($exporters) ? config('horizon-exporter.exporters') : $exporters;
 
         if (self::getRegistry() === null) {
-            self::setRegistry(new CollectorRegistry(config('horizon-exporter.storageAdapter', new InMemory())));
+            self::setRegistry(new CollectorRegistry(config('horizon-exporter.storage_adapter', new InMemory())));
         }
         foreach ($_exporters as $exporter) {
             $_exporter = new $exporter();
