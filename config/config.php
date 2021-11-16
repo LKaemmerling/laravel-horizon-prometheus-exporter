@@ -15,6 +15,7 @@ return [
      * If you want to add your own Exporter just add the Class Name to this array
      */
     "exporters" => [
+        \LKDevelopment\HorizonPrometheusExporter\Exporter\CurrentMasterSupervisors::class,
         \LKDevelopment\HorizonPrometheusExporter\Exporter\JobsPerMinute::class,
         \LKDevelopment\HorizonPrometheusExporter\Exporter\CurrentWorkload::class,
         \LKDevelopment\HorizonPrometheusExporter\Exporter\CurrentProccesesPerQueue::class,
