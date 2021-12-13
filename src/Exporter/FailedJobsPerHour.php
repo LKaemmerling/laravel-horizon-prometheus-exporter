@@ -14,7 +14,7 @@ class FailedJobsPerHour implements Exporter
 
     public function metrics(CollectorRegistry $collectorRegistry)
     {
-        $this->gauge = $collectorRegistry->registerGauge(
+        $this->gauge = $collectorRegistry->getOrRegisterGauge(
             config('horizon-exporter.namespace'),
             'horizon_failed_jobs',
             'The number of recently failed jobs'
