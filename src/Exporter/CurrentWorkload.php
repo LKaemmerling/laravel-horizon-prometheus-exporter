@@ -13,7 +13,7 @@ class CurrentWorkload implements Exporter
     protected $gauge;
     public function metrics(CollectorRegistry $collectorRegistry)
     {
-        $this->gauge = $collectorRegistry->registerGauge(
+        $this->gauge = $collectorRegistry->getOrRegisterGauge(
             config('horizon-exporter.namespace'),
             'horizon_current_workload',
             'Current workload of all queues',
