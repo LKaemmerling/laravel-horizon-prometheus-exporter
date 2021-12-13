@@ -13,7 +13,7 @@ class JobsPerMinute implements Exporter
     protected $gauge;
     public function metrics(CollectorRegistry $collectorRegistry)
     {
-        $this->gauge = $collectorRegistry->registerGauge(
+        $this->gauge = $collectorRegistry->getOrRegisterGauge(
             config('horizon-exporter.namespace'),
             'horizon_jobs_per_minute',
             'The number of jobs per minute'
