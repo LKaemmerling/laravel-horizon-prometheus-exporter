@@ -14,7 +14,7 @@ class HorizonStatus implements Exporter
 
     public function metrics(CollectorRegistry $collectorRegistry)
     {
-        $this->gauge = $collectorRegistry->registerGauge(
+        $this->gauge = $collectorRegistry->getOrRegisterGauge(
             config('horizon-exporter.namespace'),
             'horizon_status',
             'The status of Horizon, -1 = inactive, 0 = paused, 1 = running'
