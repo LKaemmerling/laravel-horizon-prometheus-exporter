@@ -14,7 +14,7 @@ class CurrentMasterSupervisors implements Exporter
 
     public function metrics(CollectorRegistry $collectorRegistry)
     {
-		$this->gauge = $collectorRegistry->registerGauge(
+		$this->gauge = $collectorRegistry->getOrRegisterGauge(
 			config('horizon-exporter.namespace'),
 			'horizon_current_mastersupervisors',
 			'Number of mastersupervisors'
