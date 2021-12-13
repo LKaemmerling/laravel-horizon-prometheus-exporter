@@ -14,7 +14,7 @@ class RecentJobs implements Exporter
 
     public function metrics(CollectorRegistry $collectorRegistry)
     {
-        $this->gauge = $collectorRegistry->registerGauge(
+        $this->gauge = $collectorRegistry->getOrRegisterGauge(
             config('horizon-exporter.namespace'),
             'horizon_recent_jobs',
             'The number of recent jobs'
