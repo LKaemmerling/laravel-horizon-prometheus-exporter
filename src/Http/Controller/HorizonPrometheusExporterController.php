@@ -17,7 +17,7 @@ class HorizonPrometheusExporterController extends Controller
         $renderer = new RenderTextFormat();
         $result = $renderer->render(ExporterRepository::getRegistry()->getMetricFamilySamples());
 
-        if(config('horizon-exporter.auto_wipe_storage', false)) {
+        if(config('horizon-exporter.wipe_storage_after_render', false)) {
             ExporterRepository::getRegistry()->wipeStorage();
         }
 
