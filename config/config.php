@@ -39,5 +39,5 @@ return [
     /**
      * Allow storage to be wiped after a render of data in metrics controller
      */
-    "auto_wipe_storage" => false,
+    "wipe_storage_after_render" => false,
 ];
