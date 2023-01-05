@@ -27,6 +27,14 @@ class CurrentWorkload implements Exporter
         $workloads = collect($workloadRepository->get())->sortBy('name')->values();
 
         $workloads->each(function ($workload) {
+            if ($workload['split_queues']) {
+                $workload['split_queues']->each(function ($queue) {
+                    $this->gauge->set($queue['length'], [$queue['name']]);
+                });
+
+                return;
+            }
+
             $this->gauge->set($workload['length'], [$workload['name']]);
         });
     }
