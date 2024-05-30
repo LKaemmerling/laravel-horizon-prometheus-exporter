@@ -42,7 +42,7 @@ class ExporterRepository
     /**
      * @param CollectorRegistry $collectorRegistry
      */
-    public static function setRegistry(CollectorRegistry $collectorRegistry)
+    public static function setRegistry(CollectorRegistry $collectorRegistry): void
     {
         self::$registry = $collectorRegistry;
     }

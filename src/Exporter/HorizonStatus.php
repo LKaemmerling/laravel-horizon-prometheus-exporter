@@ -7,12 +7,13 @@ namespace LKDevelopment\HorizonPrometheusExporter\Exporter;
 use Laravel\Horizon\Contracts\MasterSupervisorRepository;
 use LKDevelopment\HorizonPrometheusExporter\Contracts\Exporter;
 use Prometheus\CollectorRegistry;
+use Prometheus\Gauge;
 
 class HorizonStatus implements Exporter
 {
-    protected $gauge;
+    protected Gauge $gauge;
 
-    public function metrics(CollectorRegistry $collectorRegistry)
+    public function metrics(CollectorRegistry $collectorRegistry): void
     {
         $this->gauge = $collectorRegistry->getOrRegisterGauge(
             config('horizon-exporter.namespace'),
@@ -21,7 +22,7 @@ class HorizonStatus implements Exporter
         );
     }
 
-    public function collect()
+    public function collect(): void
     {
         $status = -1;
         if ($masters = app(MasterSupervisorRepository::class)->all()) {
@@ -30,6 +31,5 @@ class HorizonStatus implements Exporter
             }) ? 0 : 1;
         }
         $this->gauge->set($status);
-
     }
 }

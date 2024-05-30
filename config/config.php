@@ -18,7 +18,7 @@ return [
         \LKDevelopment\HorizonPrometheusExporter\Exporter\CurrentMasterSupervisors::class,
         \LKDevelopment\HorizonPrometheusExporter\Exporter\JobsPerMinute::class,
         \LKDevelopment\HorizonPrometheusExporter\Exporter\CurrentWorkload::class,
-        \LKDevelopment\HorizonPrometheusExporter\Exporter\CurrentProccesesPerQueue::class,
+        \LKDevelopment\HorizonPrometheusExporter\Exporter\CurrentProcessesPerQueue::class,
         \LKDevelopment\HorizonPrometheusExporter\Exporter\FailedJobsPerHour::class,
         \LKDevelopment\HorizonPrometheusExporter\Exporter\HorizonStatus::class,
         \LKDevelopment\HorizonPrometheusExporter\Exporter\RecentJobs::class

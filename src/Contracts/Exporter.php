@@ -17,7 +17,7 @@ interface Exporter
      * @param CollectorRegistry $collectorRegistry
      * @void
      */
-    public function metrics(CollectorRegistry $collectorRegistry);
+    public function metrics(CollectorRegistry $collectorRegistry): void;
 
     /**
      * The collect method is called from the Exporter when he collects the data.
@@ -25,5 +25,5 @@ interface Exporter
      * collection within this method.
      * @void
      */
-    public function collect();
+    public function collect(): void;
 }
