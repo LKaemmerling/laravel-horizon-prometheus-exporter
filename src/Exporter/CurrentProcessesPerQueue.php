@@ -6,11 +6,13 @@ namespace LKDevelopment\HorizonPrometheusExporter\Exporter;
 use Laravel\Horizon\Contracts\WorkloadRepository;
 use LKDevelopment\HorizonPrometheusExporter\Contracts\Exporter;
 use Prometheus\CollectorRegistry;
+use Prometheus\Gauge;
 
-class CurrentProccesesPerQueue implements Exporter
+class CurrentProcessesPerQueue implements Exporter
 {
-    protected $gauge;
-    public function metrics(CollectorRegistry $collectorRegistry)
+    protected Gauge $gauge;
+
+    public function metrics(CollectorRegistry $collectorRegistry): void
     {
         $this->gauge = $collectorRegistry->getOrRegisterGauge(
             config('horizon-exporter.namespace'),
@@ -20,7 +22,7 @@ class CurrentProccesesPerQueue implements Exporter
         );
     }
 
-    public function collect()
+    public function collect(): void
     {
         $workloadRepository = app(WorkloadRepository::class);
         $workloads = collect($workloadRepository->get())->sortBy('name')->values();

@@ -10,7 +10,7 @@ class HorizonPrometheusExporterServiceProvider extends ServiceProvider
     /**
      * Bootstrap the application services.
      */
-    public function boot()
+    public function boot(): void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -25,12 +25,12 @@ class HorizonPrometheusExporterServiceProvider extends ServiceProvider
     /**
      * Register the application services.
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'horizon-exporter');
     }
 
-    protected function routes()
+    protected function routes(): void
     {
         if ($this->app->routesAreCached()) {
             return;

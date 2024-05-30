@@ -16,11 +16,11 @@ class NoopExporter implements \LKDevelopment\HorizonPrometheusExporter\Contracts
     /**
      * @var Counter
      */
-    protected $counter;
+    protected Counter $counter;
     /**
      * @inheritDoc
      */
-    public function metrics(CollectorRegistry $collectorRegistry)
+    public function metrics(CollectorRegistry $collectorRegistry): void
     {
         $this->counter = $collectorRegistry->getOrRegisterCounter(
             "app",
@@ -33,7 +33,7 @@ class NoopExporter implements \LKDevelopment\HorizonPrometheusExporter\Contracts
     /**
      * @inheritDoc
      */
-    public function collect()
+    public function collect(): void
     {
         $this->counter->inc(["op" => "noop"]);
     }
