@@ -21,15 +21,15 @@
     "require": {
         "php": "^7.1|^8.0",
         "promphp/prometheus_client_php": "^1.0.3|^2.0.0",
-        "illuminate/routing": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
-        "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
-        "illuminate/config": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
+        "illuminate/routing": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
+        "illuminate/config": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
         "laravel/horizon": "^4.0|^5.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^v4.9|^5.3|^6.3|^7.0|^8.0|^9.0",
-        "phpunit/phpunit": "^8.2|^9.0|^10.5",
-        "symfony/var-dumper": "^4.3|^5.1"
+        "orchestra/testbench": "^v4.9|^5.3|^6.3|^7.0|^8.0|^9.0|^10.0",
+        "phpunit/phpunit": "^8.2|^9.0|^10.5|^11.5.3",
+        "symfony/var-dumper": "^4.3|^5.1|^7.2"
     },
     "autoload": {
         "psr-4": {
